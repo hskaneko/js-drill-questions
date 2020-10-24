@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Drill:Chapter 5</title>
+    <script>
+        function test(n) {
+            const qNum = ('00' + n.toString()).substr(-2, 2)
+            document.write(`<h1>問題5-${qNum}を実行しました</h1>`)
+            const returnLink = `<a href="javascript:location.reload()">戻る</a>`
+            document.write(`<p>結果はコンソールをご覧ください。${returnLink}</p>`)
+            const tag = 'script'
+            document.write(`<${tag} src="Q5-${qNum}.js"></${tag}>`)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript基礎ドリル 第5章 問題ファイル</h1>
+    <ul>
+        <li><a href="javascript:test(1)">問題5-1</a></li>
+        <li><a href="javascript:test(2)">問題5-2</a></li>
+        <li><a href="javascript:test(3)">問題5-3</a></li>
+        <li><a href="javascript:test(4)">問題5-4</a></li>
+        <li><a href="javascript:test(5)">問題5-5</a></li>
+        <li><a href="Q5-06.html">問題5-6</a></li>
+        <li><a href="Q5-07.html">問題5-7</a></li>
+        <li><a href="Q5-08.html">問題5-8</a></li>
+        <li><a href="Q5-09.html">問題5-9</a></li>
+        <li><a href="Q5-10.html">問題5-10</a></li>
+    </ul>
+    <h2>使用方法</h2>
+    <ul>
+        <li>問題ファイルは、このHTMLファイルと同じフォルダにあります。そのファイルをエディタで開いてください。</li>
+        <li>書籍での空欄は、ファイル内では /* 1 */ のような記述になっています。問題を読み、それに対応したプログラムになるように空欄を埋めてください。</li>
+        <li>修正後、ファイルを保存します。</li>
+        <li>コンソールを表示します。ブラウザによって表示方法が異なります。
+            <ul>
+                <li>Chrome： ウインドウ右上の縦方向に...となっている部分をクリックして、 「その他のツール」から「デベロッパーツール」を選択し、「コンソール」のタブをクリック
+                </li>
+                <li>Firefox ウインドウ右上の「三」の部分ををクリックして、「ウェブ開発」から「ウェブコンソール」を選択
+                </li>
+                <li>Safari： 環境設定の「詳細」で「メニューバーに開発メニューを表示」にチェックを入れる。 その後に、「開発」メニューから「JavaScriptコンソールを表示」を選択
+                </li>
+                <li>Edge：
+                </li>
+            </ul>
+        </li>
+        <li>このページの問題リンクをクリックすると、問題ファイルのプログラムが稼働し、コンソールへ出力します。</li>
+    </ul>
+</body>
+
+</html>
