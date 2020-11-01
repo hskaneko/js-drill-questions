@@ -1,4 +1,4 @@
-import { showMuchPhotos } from "./Q5-10-lib.js"
+/* ② */ { /* ③ */ } from /* ④ */
 
 window.addEventListener("load", (event) => {
     showMuchPhotos()

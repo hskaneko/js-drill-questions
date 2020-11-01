@@ -1,11 +1,14 @@
+/******************************** 問題はここから */
 const excludePrefix = ["__", "test_"]
 const movingHost = "msyk.net"
+/******************************** 問題はここまで */
 if (!navigator) {
     console.log("ブラウザでの実行ではありません。")
 } else {
-    const destHost = `${movingHost}${location.port?`:${location.port}`:""}`
+/******************************** 問題はここから */
+    const destHost = `${movingHost}${/* ① */}`
     let url = `${location.protocol}//${destHost}${location.pathname}?`
-    const params = location.search.substr(1).split("&")
+    const params = location.search.substr(1)./* ② */
     let newParams = []
     for (let i = 0; i < params.length; i++) {
         let isMatch = true
@@ -16,11 +19,12 @@ if (!navigator) {
             }
         }
         if (isMatch) {
-            newParams.push(params[i])
+            newParams./* ③ */
         }
     }
-    url += newParams.join("&")
+    url += /* ④ */
 
     console.log(url) // 結果の確認用
-    location.href = url
+    /* ⑤ */
+/******************************** 問題はここまで */
 }

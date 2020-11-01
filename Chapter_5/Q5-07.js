@@ -5,9 +5,9 @@ function openWindow() {
 }
 
 function closeWindow() {
-    if (openedWindow && !openedWindow.closed) {
-        openedWindow.close()
+    if (openedWindow && /* ① */) {
+        /* ② */.close()
     } else {
-        window.close()
+        /* ③ */.close()
     }
 }

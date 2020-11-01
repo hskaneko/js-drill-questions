@@ -1,10 +1,10 @@
 const catName = 'ルイ'
 qItem = {
-    question: `${catName}という名の猫はあなたが飼っていますか？`,
+    question: `$/* ① */という名の猫はあなたが飼っていますか？`,
     answer: [
-        `${catName}という猫を飼っていません。`,
-        `${catName}という猫を飼っています。`
+        `$/* ① */という猫を飼っていません。`,
+        `$/* ① */という猫を飼っています。`
     ]
 }
-const result = window.confirm(qItem.question)
-window.alert(qItem.answer[result ? 1 : 0])
+const result = window.confirm(/* ② */)
+window.alert(/* ③ */)

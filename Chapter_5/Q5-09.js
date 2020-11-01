@@ -4,10 +4,10 @@ window.addEventListener("load", (event) => {
 
 function showTooMuchPhotos() {
     const canvas = document.getElementById("mycanvas")
-    const gContext = canvas.getContext('2d')
+    const gContext = /* ① */
     gContext.fillStyle = "yellow"
     gContext.fillRect(0, 0, canvas.width, canvas.height)
-    const image = new Image()
+    const image = new /* ② */
     image.src = "cat.jpg"
     image.onload = () => {
         let imageX, imageY

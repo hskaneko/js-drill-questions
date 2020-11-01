@@ -1,4 +1,4 @@
-function showMuchPhotos() {
+function showPics() {
     const canvas = document.getElementById("mycanvas")
     const gContext = canvas.getContext('2d')
     gContext.fillStyle = "yellow"
@@ -17,4 +17,4 @@ function showMuchPhotos() {
     }
 }
 
-export { showMuchPhotos }
+/* ① */ { showPics }
