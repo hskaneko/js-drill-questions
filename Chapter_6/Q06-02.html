@@ -1,0 +1,25 @@
+<html>
+  <head></head>
+  <body>
+    <div>概要</div>
+    <div>詳細</div>
+    <div>まとめ</div>
+  </body>
+</html>
+
+<script>
+  console.log(document.body.childNodes.length)
+                      // 出力列: /* ① */
+  console.log(document.body.children.length)
+                      // 出力列: /* ② */
+  console.log(document.body.children[1].textContent)
+                      // 出力列: /* ③ */
+  console.log(document.querySelector("div:nth-child(2)")
+                      .previousElementSibling.textContent)
+                      // 出力列: /* ④ */
+  console.log(document.body.lastElementChild.children.length)
+                      // 出力列: /* ⑤ */
+  console.log(document.body.children
+              .filter(n => n.textContent === "詳細"))
+                      // 出力列: /* ⑥ */
+</script>

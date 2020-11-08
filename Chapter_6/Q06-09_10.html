@@ -1,0 +1,66 @@
+<textarea id="textExample" rows="5" cols="60">
+  むかしむかし、あるところに、おじいさんとおばあさんが住んでいました。
+  おじいさんは山へしばかりに、おばあさんは川へせんたくに行きました。
+  おばあさんが川でせんたくをしていると、ドンブラコ、ドンブラコと、大きな桃が流れてきました。
+</textarea>
+
+<style>
+  textarea {
+    display: block;
+    border: 1px solid #BBB;
+    color: #444;
+    font-size: 110%;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+</style>
+
+<script>
+  // 問6-9...
+  function animate({ timing, draw, duration }) {
+    // ページロード開始からの経過時間
+    let start = performance./* ① */()
+    requestAnimationFrame(function animate(time) {
+      // timeFractionは０から１まで行く
+      let timeFraction = (time - /* ② */) / /* ③ */
+      if (timeFraction > 1) timeFraction = 1
+
+      // 現在のアニメーションの状態を計算する
+      let progress = timing(/* ④ */)
+      draw(/* ⑤ */) // 描く
+      if (timeFraction < 1) {
+        requestAnimationFrame(/* ⑥ */)
+      }
+    })
+  }
+  // ...問6-9
+
+  // 問6-10...
+  const textArea = document.getElementById("textExample")
+  animateText(textArea)
+  function animateText(textArea) {
+    const text = textArea.value
+
+    animate({
+      /* ① */: 10000,
+      /* ② */: (timeFraction) => /* ③ */, // 線形関数
+      /* ④ */: function (progress) {
+        const nbToDisplay = (text.length) * /* ⑤ */
+        textArea.value = text./* ⑥ */(0, Math.ceil(/* ⑦ */))
+      }
+    })
+  }
+
+
+  // 他のタイミング関数
+  function bounce(timeFraction) {
+    for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
+      if (timeFraction >= (7 - 4 * a) / 11) {
+        return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+      }
+    }
+  }
+  // ...問6-10
+</script>

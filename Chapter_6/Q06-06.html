@@ -1,0 +1,30 @@
+<div class="message">南アフリカには11の公用語があります。</div>
+
+<style>
+.message{
+  display: inline-block;
+  background-color: #f0fbf0;
+  border: solid 1px #4adb34;
+  border-radius: 6px;
+  line-height: 18px;
+  padding: 10px 8px 6px 4px;
+}
+</style>
+
+<script>
+  function increasePadding() {
+    const messageDiv = document.querySelector(".message")
+    const padding = parseInt(getComputedStyle(messageDiv).paddingTop, 10)
+    messageDiv.style.padding = Math.min(100, padding + 10) + "px"
+  }
+  function decreasePadding() {
+    const messageDiv = document.querySelector(".message")
+    const padding = parseInt(getComputedStyle(messageDiv).padding, 10)
+    messageDiv.style.padding = Math.max(10, padding - 10) + "px"
+  }
+</script>
+
+
+// increasePadding関数のダメな行は/* ① */行目
+// decreasePadding関数のダメな行は/* ② */行目
+// 両方を修正するのに、例えば/* ③ */を/* ④ */に書き直せばいい （この解答欄は1単語にする）

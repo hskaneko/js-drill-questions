@@ -1,0 +1,26 @@
+<style>
+  #top {
+    width: 40px;
+    height: 40px;
+    background: blue;
+  }
+  #bottom {
+    width: 40px;
+    height: 40px;
+    background: red;
+  }
+</style>
+<body>
+  <div id="top"></div>
+  <div id="bottom"></div>
+</body>
+
+<script>
+  const topDiv = document./* ① */("top")
+  const bottomDiv = document./* ② */("#bottom")
+  const topColor = /* ③ */(topDiv).backgroundColor
+  setTimeout(() => {
+    topDiv.style.background = /* ③ */(bottomDiv).backgroundColor
+    bottomDiv.style.background = topColor
+  }, 3000)
+</script>

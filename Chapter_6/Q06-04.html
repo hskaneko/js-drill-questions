@@ -1,0 +1,31 @@
+<table id="numberTable"></table>
+
+<style>
+  table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+
+  td {
+    width: 20px;
+    height: 20px;
+  }
+</style>
+
+<script>
+  function createTable(n) {
+    const table = document./* ① */("numberTable")
+    let currentRow
+    for (let i = 0; i <= n; i++) {
+      // 10列おん表を作る
+      if (i % 10 === 0)
+        currentRow = table./* ② */()
+      const cell = currentRow./* ③ */()
+      // セルのテキストは数字
+      const text = document./* ④ */(i)
+      cell./* ⑤ */(text)
+    }
+  }
+  const n = 100
+  createTable(n)
+</script>

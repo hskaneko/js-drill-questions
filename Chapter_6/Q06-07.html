@@ -1,0 +1,48 @@
+<div class="flex-container">
+  <div>
+    <input id="beef" type="checkbox" data-type="meat" data-id="14353" data-price="3.50">
+    <label for="beef">Beef</label> <br>
+    <input id="chicken" type="checkbox" data-type="meat" data-id="13212" data-price="2.75">
+    <label for="chicken">Chicken</label> <br>
+    <input id="pork" type="checkbox" data-type="meat" data-id="11111" data-price="3.00">
+    <label for="pork">Pork</label>
+  </div>
+
+  <div>
+    <input id="avocado" type="checkbox" data-type="vegetable" data-id="23212" data-price="1.95">
+    <label for="avocado">Avocado</label> <br>
+    <input id="brocoli" type="checkbox" data-type="vegetable" data-id="23435" data-price="1.25">
+    <label for="brocoli">Brocoli</label> <br>
+    <input id="onions" type="checkbox" data-type="vegetable" data-id="27854" data-price="0.85">
+    <label for="onions">Onions</label>
+  </div>
+
+  <div>
+    <input id="mozzarella" type="checkbox" data-type="cheese" data-id="34321" data-price="2.15">
+    <label for="mozzarella">Mozzarella</label> <br>
+    <input id="cheddar" type="checkbox" data-type="cheese" data-id="33233" data-price="2.50">
+    <label for="cheddar">Cheddar</label> <br>
+    <input id="swisscheese" type="checkbox" data-type="cheese" data-id="33432" data-price="2.75">
+    <label for="swisscheese">Swiss cheese</label>
+  </div>
+</div>
+
+<style>
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .flex-container>div {
+    margin: 10px;
+  }
+</style>
+
+<script>
+  function calculatePrice() {
+    const checked = document.querySelectorAll('input[type=checkbox]:checked')
+    let price = 0
+    checked./* ① */(c => price += +c./* ② */.price)
+    return price./* ③ */(2)
+  }
+</script>

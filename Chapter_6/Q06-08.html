@@ -1,0 +1,19 @@
+<body>
+  <div id="lamp"></div>
+</body>
+
+<style>
+  body {
+    background: black;
+  }
+  div {
+    background: yellow;
+    width:40px;
+    height:40px;
+  }
+</style>
+
+<script>
+  const lamp = document./* ① */("lamp")
+  /* ② */(() => lamp./* ③ */ = !lamp./* ③ */, 1000) // 解答欄の③は1単語にする
+</script>

@@ -1,0 +1,67 @@
+<table id="numberTable"></table>
+
+<style>
+  table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+
+  td {
+    width: 20px;
+    height: 20px;
+  }
+</style>
+
+<script>
+  // 問6-4...
+  function createTable(n) {
+    const table = document./* ① */("numberTable")
+    let currentRow
+    for (let i = 0; i <= n; i++) {
+      // 10列おん表を作る
+      if (i % 10 === 0)
+        currentRow = table./* ② */()
+      const cell = currentRow./* ③ */()
+      // セルのテキストは数字
+      const text = document./* ④ */(i)
+      cell./* ⑤ */(text)
+    }
+  }
+  const n = 100
+  createTable(n)
+  // ...問6-4
+
+  let isEven = n => n % 2 === 0
+  colorCells(isEven), "yellow")
+
+  function colorCells(testFunction, color) {
+    const allCells = document./* ① */("td")
+    for(let cell /* ② */ allCells) {
+      if(/* ③ */(cell./* ④ */)) {
+        cell./* ⑤ */.background = color
+      }
+    }
+  }
+
+
+  // 他の関数
+  function isOdd(n) {
+    return n % 2 !== 0
+  }
+
+  function isPrime(n) {
+    if (n <= 3) {
+      return n > 1
+    } else if (n % 2 === 0 || n % 3 == 0) {
+      return false
+    }
+    i = 5
+    while (i ** 2 <= n) {
+      if (n % i === 0 || n % (i + 2) === 0) {
+        return false
+      }
+      i += 6
+    }
+    return true
+  }
+</script>
