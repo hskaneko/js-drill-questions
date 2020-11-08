@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<form>
+  <label for="name">氏名:</label>
+  <input type="text" id="name" name="name">
+
+  <input type="radio" id="/* 問7-3① */" name="gender" value="male" checked>
+  <label for="/* 問7-3① */">男</label>
+  <input type="radio" id="/* 問7-3② */" name="gender" value="female">
+  <label for="/* 問7-3② */">女</label>
+
+  <fieldset id="disease">
+    <legend>今までにかかった病気や治療中の病気</legend>
+    <div>
+      <input type="checkbox" id="asthma" name=" asthma" value="asthma">
+      <label for="asthma">喘息</label>
+      <input type="number" id="asthmaage" name="asthmaage" class="age" disabled>歳頃
+    </div>
+    <div>
+      <input type="checkbox" id="hypertension" name="hypertension" value="hypertension">
+      <label for="hypertension">高血圧</label>
+      <input type="number" id="hypertensionage" name="hypertensionage" class="age" disabled>歳頃
+    </div>
+    <div>
+      <input type="checkbox" id="diabetes"" name=" diabetes" value="diabetes">
+      <label for="diabetes">糖尿病</label>
+      <input type="number" id="diabetesage" name="diabetesage" class="age" disabled>歳頃
+    </div>
+    <div>
+      <input type="checkbox" id="heart""" name="heart" value="heart">
+      <label for="heart">心臓病</label>
+      <input type="number" id="heartage" name="heartage" class="age" disabled>歳頃
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>今までに手術や輸血の経験はありますか</legend>
+    <input type="radio" id="pastopn" name="pastop"" value=" yes" onchange="diseaseChange()" checked>
+    <label for="pastopy">なし</label>　
+    <input type="radio" id="pastopy" name="pastop" value="no" onchange="diseaseChange()">
+    <label for="pastopn">あり</label><br>
+
+    <label for="diseasename">病名:</label>
+    <input type="text" id="diseasename" name="diname" disabled><br>
+    <label for="diseasetime">いつ頃:</label>
+    <input type="text" id="diseasetime" name="ditime" disabled>
+  </fieldset>
+
+  <fieldset id="forwoman">
+    <legend>女性の方へ</legend>
+    妊娠している可能性は？
+    <input type="radio" id="pregnant"" name=" pregnancy" value="yes">
+    <label for="pregnant">ない</label>
+    <input type="radio" id="notpregnant" name="pregnancy" value="no">
+    <label for="notpregnant">ある</label><br>
+
+    <label for="period">最終月経は？</label>
+    <input type="date" id="period" name="period">
+    <input type="checkbox" id="menopause" name="menopause" value="menopause">
+    <label for="menopause">閉経してる</label>
+  </fieldset>
+
+  <input id="submit" type="submit" value="提出">
+</form>
+
+<style>
+  form {
+    line-height: 2;
+  }
+
+  fieldset {
+    margin-top: 30px;
+    width: 420px;
+  }
+
+  #disease div {
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+  }
+
+  #forwoman {
+    display: none;
+  }
+
+  #submit {
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+
+  .age {
+    width: 30px;
+  }
+</style>
+
+
+<script>
+  // 問7-2
+  function diseaseChange() {
+    const disable = document.getElementById("pastopn")./* ① */
+    document.getElementById("diseasename")./* ② */ = /* ③ */
+    document.getElementById("diseasetime")./* ② */ = /* ③ */
+  }
+
+  // 問7-3
+  let female = document.getElementById("female")
+  let male = document.getElementById("male")
+  female./* ③ */ = function () {
+    document.getElementById("forwoman")./* ④ */.display = "block"
+  }
+  male./* ③ */ = function () {
+    document.getElementById("forwoman")./* ④ */.display = "none"
+  }
+
+  // 問7-4
+  let elements = document./* ① */("#disease input[/* ② */]")
+  elements.forEach(element => {
+    element./* ③ */("/* ④ */", () => {
+      element.parentNode.children[/* ⑤ */].disabled = !element.checked
+    })
+  })
+</script>

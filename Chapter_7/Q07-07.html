@@ -1,0 +1,32 @@
+<form>
+  <label for="number">資料番号: </label>
+  <input type="text" id="number" name="number" oninput="checkNumber()">
+  <label for="department">事業部: </label>
+  <select id="department" name="department" onchange="checkNumber()">
+    <option value="SD">ソフトウェア開発事業部</option>
+    <option value="DS">データサイエンス事業部</option>
+    <option value="MG">マネジメント事業部</option>
+    <option value="CS">顧客支援事業部</option>
+  </select>
+  <input type="submit" value="提出">
+</form>
+
+
+<script>
+  function checkNumber() {
+    const divisions = {
+      SD: ['^(SD-)\\d+', 'ソフトウェア事業部の資料は「SD-番号」で入力'],
+      DS: ['^(DS-)\\d+', 'データサイエンス事業部の資料は「DS-番号」で入力'],
+      MG: ['^(MG-)\\d+', 'マネジメント事業部の資料は「MG-番号」で入力'],
+      CS: ['^(CS-)\\d+', '顧客支援部事業部の資料は「CS-番号」で入力']
+    }
+
+    const form = document./* ① */[0]
+    const number = form./* ② */
+    const department = form./* ③ */
+    const msg = divisions[department.value][1]
+    if (!number.value.match(divisions[/* ④ */][0])) {
+      number./* ⑤ */(msg)
+    }
+  }
+</script>

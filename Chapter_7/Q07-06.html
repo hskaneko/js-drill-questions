@@ -1,0 +1,36 @@
+<input type="text" id="card1" class="card" maxlength="4">
+<input type="text" id="card2" class="card" maxlength="4">
+<input type="text" id="card3" class="card" maxlength="4">
+<input type="text" id="card4" class="card" maxlength="4">
+
+
+<script>
+  function keyIsOk(event) {
+    keys = ['ArrowLeft', 'ArrowRight', 'Delete', 'Backspace']
+    return event.key >= '0' && event.key <= '9' || event.metaKey
+        || keys.includes(event.key)
+
+  }
+
+  class CardHandler {
+    handleEvent(event) {
+      switch (event./* ① */) {
+        case '/* ② */':
+          const pasted = event./* ③ */.getData("text")
+          if (!pasted.match(/\d+/))
+            event./* ④ */()
+          break
+        case '/* ⑤ */':
+          if (!keyIsOk(event))
+            event./* ④ */()
+          break
+      }
+    }
+  }
+
+  const cardHandler = new CardHandler()
+  for (const ele /* ⑥ */ document.querySelectorAll(".card")) {
+    ele.addEventListener('/* ② */', cardHandler)
+    ele.addEventListener('/* ⑤ */', cardHandler)
+  }
+</script>

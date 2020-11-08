@@ -1,0 +1,50 @@
+<ul /* ① */="menu-list">
+  <li>四国
+    <ul>
+      <li>徳島県
+        <ul>
+          <li>徳島市</li>
+          <li>鳴門市</li>
+        </ul>
+      </li>
+      <li>香川県</li>
+      <li>愛媛県</li>
+      <li>高知県</li>
+    </ul>
+  </li>
+  <li>九州</li>
+  <li>本州</li>
+  <li>北海道
+    <ul>
+      <li>札幌市</li>
+    </ul>
+  </li>
+</ul>
+
+<style>
+  li ul {
+    display: none;
+  }
+</style>
+
+<script>
+  class MenuList /* ② */ HTMLUListElement {
+    constructor() {
+      super() // 必ず最初に呼び出す
+
+      for (let li of document./* ③ */('li'))
+        if (li./* ③ */('ul').length > 0)
+          li./* ④ */ = showInnerul
+    }
+  }
+
+  function showInnerul(e) {
+    const ul = e./* ⑤ */.children[0]
+    ul.style.display = ul.style.display === 'block' ? '/* ⑥ */' : 'block'
+    }
+    // これがないと徳島県をクリックしたら徳島県のリストが表示しない
+    e./* ⑦ */()
+  }
+
+  customElements./* ⑧ */('menu-list', MenuList, { extends: 'ul' })
+</script>

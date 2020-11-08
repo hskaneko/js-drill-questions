@@ -1,0 +1,12 @@
+<span id="sheeps">眠れない</span>
+<button onclick="/* ① */">ひつじを数える</button>
+
+
+<script>
+  let nbSheeps = 1
+  function countSheeps() {
+    const sheeps = document.getElementById("/* ② */")
+    sheeps./* ③ */ = `ひつじ${nbSheeps}匹`
+    /* ④ */ += 1
+  }
+</script>

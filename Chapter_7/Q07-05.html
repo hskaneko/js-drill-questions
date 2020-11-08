@@ -1,0 +1,44 @@
+<div id="slider">
+  <div id="marker"></div>
+</div>
+
+<script>
+  let marker = document.querySelector('#marker');
+  let shiftX
+
+  marker./* ① */ = function(event) {
+    marker./* ② */(event.pointerId)
+  }
+
+  marker./* ③ */ = function(event) {
+    let newX = event.clientX - slider.getBoundingClientRect().left
+    let rightEdge = slider.offsetWidth - marker.offsetWidth
+    if (newX < 0) newX = 0
+    else if (newX > rightEdge) newX = rightEdge
+    marker./* ④ */.left = newX + 'px'
+  }
+
+  // ブラウザーのドラッグ&ドロップを無効にする
+  marker.ondragstart = () => false;
+</script>
+
+<style>
+  #slider {
+  border-radius: 5px;
+  background: #E0E0E0;
+  width: 310px;
+  height: 15px;
+  margin: 5px;
+}
+
+#marker {
+  width: 10px;
+  height: 25px;
+  border-radius: 3px;
+  position: relative;
+  left: 10px;
+  top: -5px;
+  background: black;
+  cursor: pointer;
+}
+</style>
