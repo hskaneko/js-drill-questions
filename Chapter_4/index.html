@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Drill:Chapter 4</title>
+    <script>
+        function test(n) {
+            const qNum = ('00' + n.toString()).substr(-2, 2)
+            document.write(`<h1>問題4-${qNum}を実行しました</h1>`)
+            const returnLink = `<a href="javascript:location.reload()">戻る</a>`
+            document.write(`<p>結果はコンソールをご覧ください。${returnLink}</p>`)
+            const tag = 'script'
+            document.write(`<${tag} src="Q4-${qNum}.js"></${tag}>`)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript基礎ドリル 第4章 問題ファイル</h1>
+    <ul>
+        <li><a href="javascript:test(1)">問題4-1</a></li>
+        <li><a href="javascript:test(2)">問題4-2</a></li>
+        <li><a href="javascript:test(3)">問題4-3</a></li>
+        <li><a href="javascript:test(4)">問題4-4</a></li>
+        <li><a href="javascript:test(5)">問題4-5</a></li>
+        <li><a href="javascript:test(6)">問題4-6</a></li>
+        <li><a href="javascript:test(7)">問題4-7</a></li>
+        <li><a href="javascript:test(8)">問題4-8</a></li>
+        <li><a href="javascript:test(9)">問題4-9</a></li>
+        <li><a href="javascript:test(10)">問題4-10</a></li>
+        <li><a href="javascript:test(11)">問題4-11</a></li>
+        <li><a href="javascript:test(12)">問題4-12</a></li>
+        <li><a href="javascript:test(13)">問題4-13</a></li>
+        <li><a href="javascript:test(14)">問題4-14</a></li>
+        <li><a href="javascript:test(15)">問題4-15</a></li>
+        <li><a href="javascript:test(16)">問題4-16</a></li>
+        <li><a href="javascript:test(17)">問題4-17</a></li>
+        <li><a href="javascript:test(18)">問題4-18</a></li>
+        <li><a href="javascript:test(19)">問題4-19</a></li>
+        <li><a href="javascript:test(10)">問題4-10</a></li>
+        <li><a href="javascript:test(21)">問題4-21</a></li>
+        <li><a href="javascript:test(22)">問題4-22</a></li>
+        <li><a href="javascript:test(23)">問題4-23</a></li>
+        <li><a href="javascript:test(24)">問題4-24</a></li>
+        <li><a href="javascript:test(25)">問題4-25</a></li>
+        <li><a href="javascript:test(26)">問題4-26</a></li>
+        <li><a href="javascript:test(27)">問題4-27</a></li>
+        <li><a href="javascript:test(28)">問題4-28</a></li>
+        <li><a href="javascript:test(29)">問題4-29</a></li>
+        <li><a href="javascript:test(30)">問題4-30</a></li>
+    </ul>
+    <h2>使用方法</h2>
+    <ul>
+        <li>問題ファイルは、このHTMLファイルと同じフォルダにあります。そのファイルをエディタで開いてください。</li>
+        <li>書籍での空欄は、ファイル内では /* ① */ のような記述になっています。問題を読み、それに対応したプログラムになるように空欄を埋めて（書き換えて）ください。</li>
+        <li>修正後、ファイルを保存します。</li>
+        <li>上記の問題番号のリンクをクリックして、プログラムを実行します。</li>
+        <li>結果を表示するにはコンソールを表示します。ブラウザによって表示方法が異なります。
+            <ul>
+                <li>Chrome： ウインドウ右上の縦方向に...となっている部分をクリックして、 「その他のツール」から「デベロッパーツール」を選択し、「コンソール」のタブをクリック
+                </li>
+                <li>Firefox ウインドウ右上の「三」の部分ををクリックして、「ウェブ開発」から「ウェブコンソール」を選択
+                </li>
+                <li>Safari： 環境設定の「詳細」で「メニューバーに開発メニューを表示」にチェックを入れる。 その後に、「開発」メニューから「JavaScriptコンソールを表示」を選択
+                </li>
+                <li>Edge：「ツール」メニューの「開発者」から「開発者ツール」を選択
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
