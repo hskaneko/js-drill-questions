@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>問 8-7</title>
+</head>
+<body>
+    <div>
+        <p>ページ読み込み後、10秒以内にコメントを記述してください</p>
+        <input id="comment" type="text" placeholder="コメント欄"></input>
+    </div>
+    <script>
+        function delayGetComment(sec) {
+            const commentElement = document.getElementById('comment')
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const comment = commentElement.value
+                    if(0 < comment.trim().length) /* ① */(comment)
+                    else /* ② */(new Error('コメント欄が未記入です。'))
+                }, 1000 * sec)
+            })
+        }
+
+        delayGetComment(10)./* ③ */(comment => {
+            alert(`コメント "${comment}" のご記入ありがとうございます。`)
+        })./* ④ */(err => {
+            alert(`エラーが発生しました。 ${err.message}`)
+        })
+    </script>
+</body>
+</html>
