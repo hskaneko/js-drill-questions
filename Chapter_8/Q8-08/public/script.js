@@ -21,3 +21,8 @@ function updateWeatherInfo() {
       document.getElementById('tomorrow').innerHTML = `Tomorrow: ${tomorrow}`
     })
 }
+
+// 実行結果
+// load ボタンを押下すると、以下のように表示される
+// Today : cloudy
+// Tomorrow: rain
