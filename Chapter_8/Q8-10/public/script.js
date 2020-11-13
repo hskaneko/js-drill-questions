@@ -31,6 +31,8 @@ function updateGemSelector() {
     })
 }
 
+updateGemSelector()
+
 // 実行結果
 // ページをロードすると AJAX通信が始まり、通信終了後、セレクトボックスに以下の選択肢が設定される
 //
