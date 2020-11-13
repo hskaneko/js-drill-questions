@@ -10,8 +10,6 @@ function updateWeatherInfo() {
     })
 }
 
-const weatherURL = '/api/weathers'
-
 function updateWeatherInfo() {
   fetch(weatherURL)
     .then(response => { return response.json() })
