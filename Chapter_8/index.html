@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Drill:Chapter 8</title>
+    <script>
+        function test(n) {
+            const qNum = ('00' + n.toString()).substr(-2, 2)
+            document.write(`<h1>問題8-${qNum}を実行しました</h1>`)
+            const returnLink = `<a href="javascript:location.reload()">戻る</a>`
+            document.write(`<p>結果はコンソールをご覧ください。${returnLink}</p>`)
+            const tag = 'script'
+            document.write(`<${tag} src="Q8-${qNum}.js"></${tag}>`)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript基礎ドリル 第8章 問題ファイル</h1>
+    <ul>
+        <li><a href="javascript:test(1)">問題8-1</a></li>
+        <li><a href="javascript:test(2)">問題8-2</a></li>
+        <li><a href="javascript:test(3)">問題8-3</a></li>
+        <li><a href="javascript:test(4)">問題8-4</a></li>
+        <li><a href="javascript:test(5)">問題8-5</a></li>
+        <li><a href="javascript:test(6)">問題8-6</a></li>
+        <li><a href="Q8-07.html">問題8-7</a></li>
+        <li><a href="http://localhost:3000">問題8-8</a></li>
+        <li><a href="http://localhost:3000">問題8-9</a></li>
+        <li><a href="http://localhost:3000">問題8-10</a></li>
+    </ul>
+    <h2>使用方法</h2>
+    <ul>
+        <li>書籍での空欄は、ファイル内では /* ① */ のような記述になっています。問題を読み、それに対応したプログラムになるように空欄を埋めて（書き換えて）ください。</li>
+        <li>修正後、ファイルを保存します。</li>
+    </ul>
+    <h3>問題8-1 〜 問題8-6</h3>
+    <ul>
+        <li>問題ファイルは、このHTMLファイルと同じフォルダにあります(Q8-01.js 〜 Q8-06.js)。そのファイルをエディタで開いてください。</li>
+        <ul>
+            <li>上記の問題番号のリンクをクリックして、プログラムを実行します。</li>
+            <li>結果を表示するにはコンソールを表示します。ブラウザによって表示方法が異なります。
+                <ul>
+                    <li>Chrome： ウインドウ右上の縦方向に...となっている部分をクリックして、 「その他のツール」から「デベロッパーツール」を選択し、「コンソール」のタブをクリック
+                    </li>
+                    <li>Firefox ウインドウ右上の「三」の部分ををクリックして、「ウェブ開発」から「ウェブコンソール」を選択
+                    </li>
+                    <li>Safari： 環境設定の「詳細」で「メニューバーに開発メニューを表示」にチェックを入れる。 その後に、「開発」メニューから「JavaScriptコンソールを表示」を選択
+                    </li>
+                    <li>Edge：「ツール」メニューの「開発者」から「開発者ツール」を選択
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </ul>
+    <h3>問題8-7</h3>
+    <ul>
+        <li>問題ファイルは、このHTMLファイルと同じフォルダにあります(Q8-07.html)。そのファイルをエディタで開いてください。</li>
+        <ul>
+            <li>上記の問題番号のリンクをクリックして、プログラムを実行します。</li>
+        </ul>
+    </ul>
+    <h3>問題8-8 〜 問題8-10</h3>
+    <ul>
+        <li>問題ファイルは、このHTMLファイルに配されているQ8-08 〜 Q8-10 フォルダ内にあります。</li>
+        <li>空欄を含むファイルは各フォルダの public/script.js です。そのファイルをエディタで開いてください。</li>
+        <ul>
+            <li>AJAX通信を実現する都合上、ウェブサーバーを稼働させる必要があります。</li>
+            <li>問題ファイルの該当ディレクトリーがカレントディレクトリーになるよう移動してから、「npm install」とコマンド入力するとウェブサーバー稼働のためのモジュール（Express.js）がインストールされます。</li>
+            <li>その後、「npm start」とコマンド入力すると、ポート番号3000でウェブサーバーが稼働します。</li>
+            <li>この状態でブラウザーで上記の問題番号のリンク(http://localhost:3000)をクリックすることで、動作確認できます。</li>
+            <li>どの問題もウェブサーバーはポート番号3000で稼働するようにコーディングされています。そのため、2つ以上の問題を同時に動作させようとするとエラーが発生しますのでお気をつけください。</li>
+        </ul>
+    </ul>
+</body>
+</html>

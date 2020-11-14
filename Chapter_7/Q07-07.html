@@ -26,7 +26,7 @@
     const department = form./* ③ */
     const msg = divisions[department.value][1]
     if (!number.value.match(divisions[/* ④ */][0])) {
-      number./* ⑤ */(msg)
+      number./* ⑤ */(divisions[/* ④ */][1])
     }
   }
 </script>
