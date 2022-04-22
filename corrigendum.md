@@ -5,6 +5,7 @@
 
 |訂正箇所と内容|訂正前|訂正後|
 |----|----|----|
+|p.37 問2-1　<br>プログラムの5行目<br>コードの訂正 | ③  (hour ④  18) return "こんにちは" | ③  (hour ④  18 && hour >= 9) return "こんにちは" |
 |p.121 問4-29　<br>下から10行目<br>コードの訂正 | const line = "@".repeat(this.text.length + **3**) | const line = "@".repeat(this.text.length + **2**) |
 |p.186 問7-7　<br>4、5行目<br>記述の不足と訂正 | if (!number.value.match(**constraints**[④][0])) {<br>   number.⑤(**msg**)  | if (!number.value.match(**divisions**[④][0])) {<br>    number.⑤(**divisions[④][1]**) |
 |p.214 問8-9　<br>12、13行目<br>コードの訂正 | .⑤ (err => { showError(err.message) }) | .⑤ (err => { showError(err.message) })<br>**}** |
